@@ -39,9 +39,28 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Mobile nav toggle
+// Mobile nav toggle (collapsible navbar)
 document.querySelector(".nav-toggle").addEventListener("click", () => {
   document.querySelector(".nav-links").classList.toggle("open");
+  // Prevent scroll when nav is open on mobile
+  if (document.querySelector(".nav-links").classList.contains("open")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+});
+// Also close nav when clicking outside nav on mobile
+document.addEventListener("click", (e) => {
+  const navLinks = document.querySelector(".nav-links");
+  const navToggle = document.querySelector(".nav-toggle");
+  if (
+    navLinks.classList.contains("open") &&
+    !navLinks.contains(e.target) &&
+    !navToggle.contains(e.target)
+  ) {
+    navLinks.classList.remove("open");
+    document.body.style.overflow = "";
+  }
 });
 
 // Fade-in animation for sections on scroll
