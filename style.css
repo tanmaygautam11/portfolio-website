@@ -676,12 +676,26 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1400px) {
+  .hero-bg-anim::before {
+    width: 70%;
+  }
+  .hero-bg-anim::after {
+    display: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
 @media (max-width: 1100px) {
   .hero-section { flex-direction: column; gap: 2em;}
   .hero-content { flex-direction: column; gap: 2em;}
   .hero-info, .hero-illustration-wrap { max-width: 100%; min-width: 0; width: 100%;}
   .hero-illustration-wrap { justify-content: center; margin: 0; padding: 1vw 0;}
   .hero-info { padding: 3vw 0 0 0; }
+  .hero-bg-anim::before {
+    width: 90%;
+  }
   main { padding: 0 5vw 2.2em 5vw; }
   .section,
   .skills-cards-container,
@@ -693,15 +707,6 @@ footer {
     padding-left: 5vw !important;
     padding-right: 5vw !important;
     box-sizing: border-box;
-  }
-  .hero-bg-anim::before,
-  .hero-bg-anim::after,
-  .hero-shapes .shape1,
-  .hero-shapes .shape2 {
-    display: none !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
   }
   .section {
     padding-top: 1.2em !important;
@@ -727,6 +732,16 @@ footer {
   .work-videos {
     grid-template-columns: 1fr;
     gap: 2em;
+  }
+
+  .hero-bg-anim::before,
+  .hero-bg-anim::after,
+  .hero-shapes .shape1,
+  .hero-shapes .shape2 {
+    display: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 }
 
